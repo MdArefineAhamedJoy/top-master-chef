@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import ChefCard from "../ChefCard/ChefCard";
+import Banner from "../Banner/Banner";
 
 const Home = () => {
   const [chefCard, setChefCard] = useState([]);
@@ -10,8 +11,9 @@ const Home = () => {
   }, []);
   console.log(chefCard);
   return (
-    <div>
-      <div className=" grid grid-cols-3 gap-5">
+    <div className="px-5">
+        <Banner></Banner>
+      <div className="mt-20 grid grid-cols-3 gap-5">
         {chefCard.map((data) => (
           <ChefCard data={data} key={data.id}></ChefCard>
         ))}
