@@ -1,12 +1,15 @@
 import React, { useContext, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../route/AuthProvider";
 import { FaGithub, FaGoogle } from "react-icons/fa";
 
 const Login = () => {
-  const { logIn, handelGoogleLogin } = useContext(AuthContext);
+  const { logIn, handelGoogleLogin , handelGithubLogin} = useContext(AuthContext);
   const [success, setSuccess] = useState("");
   const [error, setError] = useState("");
+  const navigate = useNavigate()
+  const location = useLocation()
+  const from = location?.state?.from?.pathname || '/'
   // handel login email password
   const handelLogin = (event) => {
     event.preventDefault();
@@ -16,10 +19,13 @@ const Login = () => {
     logIn(email, password)
       .then((res) => {
         const userRes = res.user;
-        console.log(userRes);
+        navigate(from,{replace : true})
+        setSuccess('')
+        setError('')
       })
       .catch((error) => {
-        console.log(error);
+        setSuccess('')
+        setError('')
       });
   };
   // handle login with google
@@ -27,7 +33,8 @@ const Login = () => {
     handelGoogleLogin()
       .then((res) => {
         const currenUser = res.user;
-        setSuccess(currenUser);
+        navigate(from,{replace : true})
+        setSuccess("");
         setError("");
       })
       .catch((error) => {
@@ -35,7 +42,20 @@ const Login = () => {
         setError(error.message);
       });
   };
-
+// login with github 
+  const loginWithGitHub = () =>{
+    handelGithubLogin()
+    .then(res => {
+      const currenUser = res.user ;
+      navigate(from,{replace : true})
+      setSuccess(currenUser)
+      setError('')
+    })
+    .catch(error =>{
+      console.log(error.message)
+      setSuccess(" ")
+    })
+  }
   return (
     <div>
       <div className="hero min-h-screen bg-base-200">
@@ -91,15 +111,16 @@ const Login = () => {
                 <button
                  onClick={loginWithGoogle}
                 className="bg-gray-600 rounded-xl flex py-2 px-5 items-center font-bold text-white  w-full text-left ">
-                  <FaGoogle size="md" className="w-8 me-5"></FaGoogle> Sing In
+                  <FaGoogle size='xs'  className="w-8 me-5"></FaGoogle> Sing In
                   With Google
                 </button>
               </div>
               <div className="mb-5 mt-3">
-                <button
+                <button 
+                  onClick={loginWithGitHub}
                   className="bg-gray-600 rounded-xl flex py-2 px-5 items-center font-bold text-white  w-full text-left "
                 >
-                  <FaGithub size="md" className="w-8 me-5"></FaGithub> Sing In
+                  <FaGithub size='xs' className="w-8 me-5"></FaGithub> Sing In
                   With GitHub
                 </button>
               </div>

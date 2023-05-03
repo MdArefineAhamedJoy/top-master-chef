@@ -13,8 +13,8 @@ const Navbar = () => {
   }
   return (
     <div>
-      <div className="navbar bg-base-100 opacity-70 px-7">
-        <a className="btn btn-ghost normal-case text-xl">daisyUI</a>
+      <div className="navbar bg-base-100 opacity-70 md:px-5">
+        <h2 className=" p-4 text-2xl font-extrabold text-white bg-green-700">Top Muster Chef</h2>
         <ul className="ms-auto">
             <li>
                 <Link className="btn btn-ghost" to="/">Home</Link>
