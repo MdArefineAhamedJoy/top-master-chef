@@ -14,6 +14,7 @@ const ChefDetails = () => {
     id,
     bio,
   } = details;
+
   return (
     <div className="px-5">
       <div className="card md:card-side bg-base-100 shadow-xl my-20">
@@ -34,10 +35,10 @@ const ChefDetails = () => {
         </div>
       </div>
       <div className="grid grid-cols-1 gap-3">
-        {recipes.map((recipeItem) => (
+        {recipes.map((recipeItem ) => (
           <ChefRecipe
             recipeItem={recipeItem}
-            key={recipeItem.item}
+            key={recipeItem._id}
           ></ChefRecipe>
         ))}
       </div>

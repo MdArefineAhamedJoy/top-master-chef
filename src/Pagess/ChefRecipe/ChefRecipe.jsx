@@ -6,7 +6,7 @@ import "swiper/swiper.min.css";
 
 const ChefRecipe = ({ recipeItem }) => {
   const { imageURL, name, rating, cookingMethod, ingredients } = recipeItem;
-  console.log(recipeItem);
+
   return (
     <div className="mb-10 ">
       <div className="card  card-side bg-base-100 shadow-xl">

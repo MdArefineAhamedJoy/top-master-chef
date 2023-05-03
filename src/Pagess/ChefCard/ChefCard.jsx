@@ -26,7 +26,6 @@ const ChefCard = ({ data, handelDetails }) => {
           <div className="card-actions justify-center">
             <Link
               to={`chefData/${parseInt(id)}`}
-              onClick={() => handelDetails(id)}
               className="btn btn-primary  "
             >
               {" "}

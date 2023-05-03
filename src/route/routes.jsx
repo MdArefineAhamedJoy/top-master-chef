@@ -7,6 +7,7 @@ import Home from "../Pagess/Home/Home";
 import ChefDetails from "../Pagess/ChefDetails/ChefDetails";
 import Blog from "../Pagess/Blog/Blog";
 import { handelDetails } from "../../Utilites/loader";
+import PrivateRoute from "./PrivateRoute";
 
 const router = createBrowserRouter([
   {
@@ -20,7 +21,7 @@ const router = createBrowserRouter([
       },
       {
         path:'chefData/:id',
-        element:<ChefDetails></ChefDetails>,
+        element: <PrivateRoute> <ChefDetails></ChefDetails> </PrivateRoute>,
         loader: ({params}) => handelDetails(params)
       },
       {
