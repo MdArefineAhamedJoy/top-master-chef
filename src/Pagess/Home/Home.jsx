@@ -2,7 +2,8 @@ import React, { useEffect, useState } from "react";
 import ChefCard from "../ChefCard/ChefCard";
 import Banner from "../Banner/Banner";
 import { useLoaderData } from "react-router-dom";
-import MovingText from "../ExtraSection/MovingText";
+import MovingText from "../ExtraSection/ChefAward";
+import TopFood from "../ExtraSection/TopFood";
 
 const Home = () => {
   const chefData = useLoaderData()
@@ -18,6 +19,7 @@ const Home = () => {
         ))}
       </div>
       <MovingText></MovingText>
+      <TopFood></TopFood>
     </div>
   );
 };

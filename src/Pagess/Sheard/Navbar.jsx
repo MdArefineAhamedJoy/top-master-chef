@@ -3,13 +3,10 @@ import { Link } from "react-router-dom";
 import { AuthContext } from "../../route/AuthProvider";
 import { FaBars, FaWindowClose } from "react-icons/fa";
 const Navbar = () => {
-  const { user, logOut } = useContext(AuthContext);
+  const { user } = useContext(AuthContext);
   const [open, setOpen] = useState(false);
   const handelLogOut = () => {
-    console.log("click is ");
-    logOut()
-      .then((res) => {})
-      .then((error) => {});
+
   };
   return (
     <div>

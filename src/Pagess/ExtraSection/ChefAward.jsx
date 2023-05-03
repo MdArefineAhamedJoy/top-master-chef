@@ -10,7 +10,6 @@ const MovingText = () => {
   return (
     <div className="my-24 ">
       <h2 className="text-center font-bold text-xl md:text-3xl ">Top Chef Award In The World  </h2>
-
       <Marquee >
         <div className="flex gap-10 shadow-2xl py-5">
           {award.map((data) => (
