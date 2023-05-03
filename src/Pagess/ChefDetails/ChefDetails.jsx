@@ -37,8 +37,8 @@ const ChefDetails = () => {
       <div className="grid grid-cols-1 gap-3">
         {recipes.map((recipeItem ) => (
           <ChefRecipe
+          key={recipeItem._id}
             recipeItem={recipeItem}
-            key={recipeItem._id}
           ></ChefRecipe>
         ))}
       </div>

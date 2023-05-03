@@ -4,8 +4,8 @@ import { AuthContext } from "../../route/AuthProvider";
 
 const Navbar = () => {
   const {user,   logOut} = useContext(AuthContext)
-  console.log(logOut)
-  const handelLogOut =() =>{
+
+  const handelLogOut = () =>{
     console.log('click is ')
     logOut()
     .then(res =>{})

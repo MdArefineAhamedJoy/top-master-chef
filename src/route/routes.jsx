@@ -2,7 +2,7 @@ import React from "react";
 import { createBrowserRouter } from "react-router-dom";
 import Login from "../Pagess/Login/Login";
 import Register from "../Pagess/Login/Register";
-import LoginLayOut from "../Layout/LoginLayOut";
+import LoginLayOut from "../Layout/LayOut";
 import Home from "../Pagess/Home/Home";
 import ChefDetails from "../Pagess/ChefDetails/ChefDetails";
 import Blog from "../Pagess/Blog/Blog";
