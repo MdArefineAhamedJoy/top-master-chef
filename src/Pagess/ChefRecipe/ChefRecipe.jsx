@@ -1,12 +1,17 @@
-import React from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, Pagination, EffectCoverflow } from "swiper";
-import "swiper/swiper-bundle.min.css";
-import "swiper/swiper.min.css";
+import React, { useState } from "react";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 const ChefRecipe = ({ recipeItem }) => {
+  const [disableUser , setDisableUser] = useState(false)
   const { imageURL, name, rating, cookingMethod, ingredients } = recipeItem;
-
+  const toastMessage = () =>{
+    setDisableUser(true)
+    return toast("Add Our Favorite List");
+  } 
+    
+    
   return (
     <div className="mb-10 ">
       <div className="card  card-side bg-base-100 shadow-xl">
@@ -24,7 +29,8 @@ const ChefRecipe = ({ recipeItem }) => {
           </div>
           <p><span className="font-bold">Rating : </span>{rating}</p>
           <div className="card-actions justify-end">
-            <button className="btn btn-primary">Watch</button>
+            <button disabled={disableUser} onClick={()=>toastMessage(true)} className="bg-gradient-to-r from-cyan-500 to-blue-500 btn border-0">Favorite</button>
+            <ToastContainer />
           </div>
         </div>
       </div>

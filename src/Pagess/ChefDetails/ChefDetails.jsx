@@ -35,6 +35,7 @@ const ChefDetails = () => {
         </div>
       </div>
       <div className="grid grid-cols-1 gap-3">
+      <h1 className="md:text-2xl text-xl pb-5 drop-shadow-2xl uppercase font-bold text-center">Chef Most Popular Items </h1>
         {recipes.map((recipeItem ) => (
           <ChefRecipe
           key={recipeItem._id}
