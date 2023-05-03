@@ -1,6 +1,8 @@
 import React, { useContext, useState } from "react";
 import { AuthContext } from "../../route/AuthProvider";
 import { Link } from "react-router-dom";
+import Lottie from "lottie-react";
+import registerImg from "../../../public/animation2.json";
 
 const Register = () => {
   const { createAccount } = useContext(AuthContext);
@@ -14,7 +16,7 @@ const Register = () => {
     const email = form.email.value;
     const password = form.password.value;
     const photo = form.photo.value;
- 
+
     createAccount(email, password)
       .then((res) => {
         const currentUser = res.user;
@@ -22,17 +24,22 @@ const Register = () => {
           '"Success! Your action has been completed successfully. Thank you!"'
         );
         setErrorMs("");
-        form.reset()
+        form.reset();
       })
       .catch((error) => {
         setErrorMs(error.message);
-        setSuccess('')
+        setSuccess("");
       });
   };
   return (
     <div>
       <div className="hero min-h-screen bg-green-300  opacity-80">
         <div className="hero-content  md:flex">
+          <div className="text-center  w-1/2 ">
+            <p className="py-6">{success}</p>
+            <p className="py-6">{errorMs}</p>
+            <Lottie animationData={registerImg}></Lottie>
+          </div>
           <form
             onSubmit={handelRegisterFrom}
             className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100"
@@ -104,15 +111,6 @@ const Register = () => {
               <p className="text-red-700">{errorMs}</p>
             </div>
           </form>
-
-          <div className="text-center  w-1/2 ">
-            <h1 className="text-5xl font-bold">Login now!</h1>
-            <p className="py-6">
-              Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda
-              excepturi exercitationem quasi. In deleniti eaque aut repudiandae
-              et a id nisi.
-            </p>
-          </div>
         </div>
       </div>
     </div>

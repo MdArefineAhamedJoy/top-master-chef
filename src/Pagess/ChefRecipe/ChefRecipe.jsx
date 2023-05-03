@@ -10,8 +10,7 @@ const ChefRecipe = ({ recipeItem }) => {
     setDisableUser(true)
     return toast("Add Our Favorite List");
   } 
-    
-    
+  console.log(recipeItem)
   return (
     <div className="mb-10 ">
       <div className="card  card-side bg-base-100 shadow-xl">
