@@ -8,11 +8,14 @@ import ChefDetails from "../Pagess/ChefDetails/ChefDetails";
 import Blog from "../Pagess/Blog/Blog";
 import { handelDetails } from "../../Utilites/loader";
 import PrivateRoute from "./PrivateRoute";
+import Error from "../Pagess/Error/Error";
+
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <LoginLayOut />,
+    errorElement: <Error></Error>,
     children: [
       {
         path: "/",
