@@ -25,7 +25,7 @@ const Navbar = () => {
     <div>
       <div className="w-full  bg-gray-100  ">
         <nav className={`md:flex justify-between items-center  p-2 md:px-5  `}>
-          <h1 className=" md:text-3xl  md:mb-0 mb-3 p-4 text-2xl font-extrabold bg-gradient-to-r from-cyan-500 to-blue-500 bg-green-700 text-white">
+          <h1 className=" md:text-3xl  md:mb-0 mb-3 py-4 md:p-4 text-xl font-extrabold md:bg-green-400 md:text-white">
             Top Muster Chef
           </h1>
           <div
@@ -35,7 +35,7 @@ const Navbar = () => {
             {open ? <FaWindowClose></FaWindowClose> : <FaBars></FaBars>}
           </div>
           <div
-            className={`absolute md:static md:bg-red-none  bg-gray-100 ps-3 md:ps-0 md:z-auto  z-[1] left-0 w-screen md:w-auto transition-all duration-500 ease-in ${
+            className={`absolute md:static md:bg-red-none pb-5 md:pb-0  bg-gray-100 ps-3 md:ps-0 md:z-auto  z-[1] left-0 w-screen md:w-auto transition-all duration-500 ease-in ${
               open
                 ? "top-14 opacity-100"
                 : "top-[-200px] md:opacity-100 opacity-0"
@@ -82,7 +82,7 @@ const Navbar = () => {
                       className="w-12 h-12 mx-2 rounded-full active:block"
                       src={user?.photoURL}
                     />
-                    <div className="absolute top-16 right-4 w-60 p-2  bg-green-500 rounded-lg shadow-lg opacity-0 transition-opacity duration-300">
+                    <div className="absolute top-16 right-4 w-60 p-2 pb:4   bg-green-500 rounded-lg shadow-lg opacity-0 transition-opacity duration-300">
                       <p className="text-white font-bold">
                         {" "}
                         {user.displayName}

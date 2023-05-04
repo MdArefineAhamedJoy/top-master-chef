@@ -25,11 +25,11 @@ const PopularItem = () => {
         delicious cuisine, so this list is not exhaustive.
       </p>
       <div className="md:flex  ">
-        <div className="grid md:w-8/12 md:grid-cols-2 gap-3">
+        <div className="grid md:w-8/12 grid-cols-1 md:grid-cols-2 gap-3">
           {items.map((item) => (
             <div
               key={item.id}
-              className="card card-compact w-96 bg-base-100 shadow-xl"
+              className="card card-compact md:w-96 bg-base-100 shadow-xl"
             >
               <figure>
                 <img

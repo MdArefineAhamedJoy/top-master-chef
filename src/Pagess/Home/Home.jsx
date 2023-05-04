@@ -14,7 +14,7 @@ const Home = () => {
       <Banner></Banner>
       <div className="mt-20">
         <h1 className="font-bold text-2xl text-center pb-10 ">World Top Master Chef</h1>
-        <div className=" grid grid-cols-3 gap-5">
+        <div className=" grid md:grid-cols-3 grid-cols-1 gap-5">
           {chefData.map((data) => (
             <ChefCard data={data} key={data.id}></ChefCard>
           ))}
