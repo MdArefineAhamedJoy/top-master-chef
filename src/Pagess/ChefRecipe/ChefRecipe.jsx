@@ -17,7 +17,7 @@ const ChefRecipe = ({ recipeItem }) => {
         <figure className="w-1/1">
           <img className="w-full h-full" src={imageURL} alt="Movie" />
         </figure>
-        <div className="card-body w-2/12">
+        <div className="card-body md:w-2/12 w-full">
           <p className="font-bold text-lg">Item Name : {name}</p>
           <p><span className="font-bold">CookingMethod :</span> {cookingMethod}</p>
           <div className=" ">
