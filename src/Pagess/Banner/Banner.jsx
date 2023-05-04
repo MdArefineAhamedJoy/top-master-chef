@@ -21,7 +21,8 @@ const Banner = () => {
         <div className="hero-overlay bg-opacity-20"></div>
         <div className="hero-content text-center text-neutral-content">
           <div className="max-w-md">
-            <h1 className="mb-5 text-5xl font-bold">World Top Muster <span className="text-green-700">Chef There</span></h1>
+            <h1 className="mb-5 md:text-5xl text-3xl font-bold">Turkey Top Muster
+            <br /> <span className="text-green-700">Chef There</span></h1>
             <p className="mb-5">Watch the world's best chefs compete in intense cooking challenges and see who will become the next Top Master Chef. Get ready for a thrilling culinary adventure!</p>
             <button className="btn bg-gradient-to-r from-cyan-500 to-blue-500">Get Started</button>
           </div>

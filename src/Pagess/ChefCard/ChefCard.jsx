@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 
-const ChefCard = ({ data, handelDetails }) => {
+const ChefCard = ({ data }) => {
   const {
     id,
     chef_picture,
@@ -14,8 +14,8 @@ const ChefCard = ({ data, handelDetails }) => {
   return (
     <div className="">
       <div className="card md:w-96 shadow-xl ">
-        <figure>
-          <img src={chef_picture} alt="Shoes" />
+        <figure className="md:w-full h-40" >
+          <img className="w-full h-full" src={chef_picture} alt="Shoes" />
         </figure>
         <div className="card-body">
           <h2 className="card-title">Chef Name : {chef_name}</h2>

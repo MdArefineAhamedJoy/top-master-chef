@@ -18,8 +18,8 @@ const ChefDetails = () => {
   return (
     <div className="px-5">
       <div className="card md:card-side bg-base-100 shadow-xl my-20">
-        <figure className="w-3/1 p-10">
-          <img src={chefPicture} alt="Album" />
+        <figure className="w-3/1  p-10">
+          <img className="md:w-96 md:h-96" src={chefPicture} alt="Album" />
         </figure>
         <div className="card-body w-1/3">
           <h1 className="text-center font-bold mb-5 pb-2 border-b-2 border-sky-700 text-2xl">

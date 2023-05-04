@@ -9,7 +9,9 @@ import img from "../../assets/banner-5.webp";
 const PopularItem = () => {
   const [items, setItems] = useState([]);
   useEffect(() => {
-    fetch("https://top-master-chef-world-server-mdarefineahamedjoy.vercel.app/items")
+    fetch(
+      "https://top-master-chef-world-server-mdarefineahamedjoy.vercel.app/items"
+    )
       .then((res) => res.json())
       .then((data) => setItems(data));
   }, []);
@@ -38,14 +40,11 @@ const PopularItem = () => {
                   alt="food"
                 />
               </figure>
-              <div className=" flex justify-between p-4 ">
-                <h2>Fd Name : {item.name}</h2>
-                <p>Fd Origin : {item.origin}</p>
-              </div>
+              <h2 className="text-center font-bold p-4 pt-0 ">Fd Name : {item.name}</h2>
             </div>
           ))}
         </div>
-        <div className="bg-red-500 border  mt-3  md:w-4/12 ">
+        <div className="bg-gradient-to-r from-cyan-500 to-blue-500   mt-3  md:w-4/12 ">
           <Swiper
             modules={[Navigation, Pagination, Scrollbar, A11y]}
             spaceBetween={0}
@@ -55,9 +54,11 @@ const PopularItem = () => {
           >
             {items.map((data) => (
               <SwiperSlide key={data.id}>
-                <img className="w-full h-96" src={data.image_url} alt="" />
-                <p className="mt-10 text-center">{data.name}</p>
-                <p className="pb-20 px-3">{data.description}</p>
+                <img className="w-full h-screen" src={data.image_url} alt="" />
+                <div className="text-white">
+                <p className="mt-3 font-bold text-lg text-center">{data.name}</p>
+                <p className="pb-10 px-3">{data.description}</p>
+                </div>
               </SwiperSlide>
             ))}
           </Swiper>

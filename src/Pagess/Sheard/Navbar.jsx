@@ -25,7 +25,7 @@ const Navbar = () => {
     <div>
       <div className="w-full  bg-gray-100  ">
         <nav className={`md:flex justify-between items-center  p-2 md:px-5  `}>
-          <h1 className=" md:text-3xl  md:mb-0 mb-3 py-4 md:p-4 text-xl font-extrabold md:bg-green-400 md:text-white">
+          <h1 className=" md:text-3xl  md:mb-0 mb-3 py-4 md:p-4 text-xl font-extrabold md:bg-gradient-to-r from-cyan-500 to-blue-500 md:text-white">
             Top Muster Chef
           </h1>
           <div
@@ -108,4 +108,3 @@ const Navbar = () => {
 };
 
 export default Navbar;
-
