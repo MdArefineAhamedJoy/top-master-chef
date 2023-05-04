@@ -3,7 +3,7 @@ import Marquee from "react-fast-marquee";
 const MovingText = () => {
   const [award, setAward] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/award")
+    fetch("https://top-master-chef-world-server-mdarefineahamedjoy.vercel.app/award")
       .then((res) => res.json())
       .then((data) => setAward(data));
   }, []);

@@ -20,7 +20,7 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
-        loader: () => fetch("http://localhost:5000/chefData")
+        loader: () => fetch("https://top-master-chef-world-server-mdarefineahamedjoy.vercel.app/chefData")
       },
       {
         path:'chefData/:id',

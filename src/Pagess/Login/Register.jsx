@@ -33,16 +33,16 @@ const Register = () => {
   };
   return (
     <div>
-      <div className="hero min-h-screen bg-green-300  opacity-80">
+      <div className="hero min-h-screen bg-green-300   opacity-80">
         <div className="hero-content  md:flex">
           <div className="text-center  w-1/2 ">
             <p className="py-6">{success}</p>
             <p className="py-6">{errorMs}</p>
-            <Lottie animationData={registerImg}></Lottie>
+            <Lottie className="w-full h-full" animationData={registerImg}></Lottie>
           </div>
           <form
             onSubmit={handelRegisterFrom}
-            className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100"
+            className="card flex-shrink-0 w-full max-w-sm shadow-2xl "
           >
             <div className="card-body w-full h-100%">
               <div className="form-control">
@@ -105,7 +105,7 @@ const Register = () => {
                 </label>
               </div>
               <div className="form-control mt-2">
-                <button className="btn btn-primary">Login</button>
+                <button className="btn border-0 bg-gradient-to-r from-cyan-500 to-blue-500">Login</button>
               </div>
               <p className="text-green-500">{success}</p>
               <p className="text-red-700">{errorMs}</p>

@@ -1,19 +1,22 @@
 import React, { useContext, useState } from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { AuthContext } from "../../route/AuthProvider";
 import { FaBars, FaWindowClose } from "react-icons/fa";
 const Navbar = () => {
   const { user } = useContext(AuthContext);
   const [open, setOpen] = useState(false);
-  const handelLogOut = () => {
-
+  const handelLogOut = () => {};
+  const navLinkStyle = ({ isActive }) => {
+    return {
+      color: isActive ? "red" : "",
+    };
   };
   return (
     <div>
-      <div className="w-full  bg-gray-100 ">
+      <div className="w-full  bg-gray-100  ">
         <nav className={`md:flex justify-between items-center  p-2 md:px-5  `}>
           <h1 className=" md:text-3xl  md:mb-0 mb-3 p-4 text-2xl font-extrabold text-white bg-green-700">
-          Top Muster Chef
+            Top Muster Chef
           </h1>
           <div
             onClick={() => setOpen(!open)}
@@ -30,30 +33,30 @@ const Navbar = () => {
           >
             <ul className="ms-auto md:flex">
               <li>
-                <Link className="btn btn-ghost" to="/">
+                <NavLink style={navLinkStyle} className="btn btn-ghost" to="/">
                   Home
-                </Link>
+                </NavLink>
               </li>
               <li>
-                <Link className="btn btn-ghost" to="/blog">
+                <NavLink style={navLinkStyle} className="btn btn-ghost" to="/blog">
                   Blog
-                </Link>
+                </NavLink>
               </li>
               <li>
                 {user ? (
-                  <Link className="btn btn-ghost" onClick={handelLogOut}>
+                  <NavLink style={navLinkStyle} className="btn btn-ghost" onClick={handelLogOut}>
                     LogOut
-                  </Link>
+                  </NavLink>
                 ) : (
-                  <Link className="btn btn-ghost" to="/login">
+                  <NavLink style={navLinkStyle} className="btn btn-ghost" to="/login">
                     LogIn
-                  </Link>
+                  </NavLink>
                 )}
               </li>
               <li>
-                <Link className="btn btn-ghost" to="/register">
+                <NavLink style={navLinkStyle} className="btn btn-ghost " to="/register">
                   Register
-                </Link>
+                </NavLink>
               </li>
             </ul>
           </div>

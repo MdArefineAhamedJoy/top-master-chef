@@ -9,7 +9,7 @@ import img from "../../assets/banner-5.webp";
 const TopFood = () => {
   const [items, setItems] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/items")
+    fetch("https://top-master-chef-world-server-mdarefineahamedjoy.vercel.app/items")
       .then((res) => res.json())
       .then((data) => setItems(data));
   }, []);
