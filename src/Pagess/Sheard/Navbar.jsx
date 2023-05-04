@@ -3,9 +3,17 @@ import { NavLink } from "react-router-dom";
 import { AuthContext } from "../../route/AuthProvider";
 import { FaBars, FaWindowClose } from "react-icons/fa";
 const Navbar = () => {
-  const { user } = useContext(AuthContext);
+  const { user ,  logOut} = useContext(AuthContext);
   const [open, setOpen] = useState(false);
-  const handelLogOut = () => {};
+  console.log(user?.photoURL)
+  const handelLogOut = () => {
+    console.log('click logout')
+    logOut()
+    .then(res => {})
+    .catch(error =>{
+      console.log(error.message)
+    })
+  };
   const navLinkStyle = ({ isActive }) => {
     return {
       color: isActive ? "red" : "",
@@ -15,7 +23,7 @@ const Navbar = () => {
     <div>
       <div className="w-full  bg-gray-100  ">
         <nav className={`md:flex justify-between items-center  p-2 md:px-5  `}>
-          <h1 className=" md:text-3xl  md:mb-0 mb-3 p-4 text-2xl font-extrabold text-white bg-green-700">
+          <h1 className=" md:text-3xl  md:mb-0 mb-3 p-4 text-2xl font-extrabold bg-gradient-to-r from-cyan-500 to-blue-500 bg-green-700 text-white">
             Top Muster Chef
           </h1>
           <div
@@ -54,9 +62,11 @@ const Navbar = () => {
                 )}
               </li>
               <li>
-                <NavLink style={navLinkStyle} className="btn btn-ghost " to="/register">
+                {
+                  user ? <img className="w-12 h-12 mx-2 rounded-full" src={user?.photoURL} /> :<NavLink style={navLinkStyle} className="btn btn-ghost " to="/register">
                   Register
                 </NavLink>
+                }
               </li>
             </ul>
           </div>

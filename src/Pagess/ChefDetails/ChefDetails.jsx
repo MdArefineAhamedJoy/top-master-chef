@@ -38,7 +38,7 @@ const ChefDetails = () => {
       <h1 className="md:text-2xl text-xl pb-5 drop-shadow-2xl uppercase font-bold text-center">Chef Most Popular Items </h1>
         {recipes.map((recipeItem , index) => (
           <ChefRecipe
-          key={index}
+            key={recipeItem.name}
             recipeItem={recipeItem}
           ></ChefRecipe>
         ))}

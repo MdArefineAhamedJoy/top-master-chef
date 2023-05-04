@@ -4,13 +4,13 @@ import 'react-toastify/dist/ReactToastify.css';
 
 
 const ChefRecipe = ({ recipeItem }) => {
+  
   const [disableUser , setDisableUser] = useState(false)
   const { imageURL, name, rating, cookingMethod, ingredients } = recipeItem;
   const toastMessage = () =>{
     setDisableUser(true)
     return toast("Add Our Favorite List");
   } 
-  console.log(recipeItem)
   return (
     <div className="mb-10 ">
       <div className="card  card-side bg-base-100 shadow-xl">
@@ -22,8 +22,8 @@ const ChefRecipe = ({ recipeItem }) => {
           <p><span className="font-bold">CookingMethod :</span> {cookingMethod}</p>
           <div className=" ">
            <span className="font-bold ">Ingredients :</span>
-            {ingredients.map((ingredient) => (
-              <span > {ingredient} , </span>
+            {ingredients.map((ingredient , index) => (
+              <span key={index}> {ingredient} , </span>
             ))}
           </div>
           <p><span className="font-bold">Rating : </span>{rating}</p>

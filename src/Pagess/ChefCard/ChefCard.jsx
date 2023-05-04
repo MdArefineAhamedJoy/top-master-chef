@@ -13,7 +13,7 @@ const ChefCard = ({ data, handelDetails }) => {
   
   return (
     <div className="">
-      <div className="card w-96 bg-red-100 shadow-xl ">
+      <div className="card w-96  shadow-xl ">
         <figure>
           <img src={chef_picture} alt="Shoes" />
         </figure>
@@ -26,7 +26,7 @@ const ChefCard = ({ data, handelDetails }) => {
           <div className="card-actions justify-center">
             <Link
               to={`chefData/${parseInt(id)}`}
-              className="btn btn-primary  "
+              className="btn bg-gradient-to-r from-cyan-500 to-blue-500 border-0 "
             >
               {" "}
               View Recipes

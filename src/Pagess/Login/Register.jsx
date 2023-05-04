@@ -33,84 +33,91 @@ const Register = () => {
   };
   return (
     <div>
-      <div className="hero min-h-screen bg-green-300   opacity-80">
+      <div className="hero min-h-screen bg-gradient-to-tr from-green-400 via-emerald-300 to-emerald-400   opacity-80">
         <div className="hero-content  md:flex">
           <div className="text-center  w-1/2 ">
-            <p className="py-6">{success}</p>
-            <p className="py-6">{errorMs}</p>
-            <Lottie className="w-full h-full" animationData={registerImg}></Lottie>
+            <span className="py-5 font-bold">{success}</span>
+            <span className="py-5 font-bold">{errorMs}</span>
+            <Lottie
+              className="w-full h-full"
+              animationData={registerImg}
+            ></Lottie>
           </div>
-          <form
-            onSubmit={handelRegisterFrom}
-            className="card flex-shrink-0 w-full max-w-sm shadow-2xl "
-          >
-            <div className="card-body w-full h-100%">
-              <div className="form-control">
-                <label className="label">
-                  <span className="label-text">Name</span>
-                </label>
-                <input
-                  type="text"
-                  placeholder="Name"
-                  name="name"
-                  required
-                  className="input input-bordered"
-                />
+          <section className="w-6/12 ">
+            <form
+              onSubmit={handelRegisterFrom}
+              className="card flex-shrink-0  max-w-sm shadow-2xl md:mx-auto "
+            >
+              <div className="card-body w-full h-100%">
+                <div className="form-control">
+                  <label className="label">
+                    <span className="label-text">Name</span>
+                  </label>
+                  <input
+                    type="text"
+                    placeholder="Name"
+                    name="name"
+                    required
+                    className="input input-bordered"
+                  />
+                </div>
+                <div className="form-control">
+                  <label className="label">
+                    <span className="label-text">Photo</span>
+                  </label>
+                  <input
+                    type="text"
+                    placeholder="Photo"
+                    name="photo"
+                    required
+                    className="input input-bordered"
+                  />
+                </div>
+                <div className="form-control">
+                  <label className="label">
+                    <span className="label-text">Email</span>
+                  </label>
+                  <input
+                    type="email"
+                    placeholder="email"
+                    name="email"
+                    required
+                    className="input input-bordered"
+                  />
+                </div>
+                <div className="form-control">
+                  <label className="label">
+                    <span className="label-text">Password</span>
+                  </label>
+                  <input
+                    type="text"
+                    name="password"
+                    placeholder="password"
+                    className="input input-bordered"
+                    required
+                  />
+                  <label className="label">
+                    <small>
+                      You Already Login Place Go{" "}
+                      <Link
+                        className="label-text-alt link link-hover underline"
+                        to="/login"
+                      >
+                        Login
+                      </Link>
+                    </small>
+                  </label>
+                </div>
+                <div className="form-control mt-2">
+                  <button className="btn border-0 bg-gradient-to-r from-cyan-500 to-blue-500">
+                    Login
+                  </button>
+                </div>
+                <p className="text-green-500">{success}</p>
+                <p className="text-red-700">{errorMs}</p>
               </div>
-              <div className="form-control">
-                <label className="label">
-                  <span className="label-text">Photo</span>
-                </label>
-                <input
-                  type="text"
-                  placeholder="Photo"
-                  name="photo"
-                  required
-                  className="input input-bordered"
-                />
-              </div>
-              <div className="form-control">
-                <label className="label">
-                  <span className="label-text">Email</span>
-                </label>
-                <input
-                  type="email"
-                  placeholder="email"
-                  name="email"
-                  required
-                  className="input input-bordered"
-                />
-              </div>
-              <div className="form-control">
-                <label className="label">
-                  <span className="label-text">Password</span>
-                </label>
-                <input
-                  type="text"
-                  name="password"
-                  placeholder="password"
-                  className="input input-bordered"
-                  required
-                />
-                <label className="label">
-                  <small>
-                    You Already Login Place Go{" "}
-                    <Link
-                      className="label-text-alt link link-hover underline"
-                      to="/login"
-                    >
-                      Login
-                    </Link>
-                  </small>
-                </label>
-              </div>
-              <div className="form-control mt-2">
-                <button className="btn border-0 bg-gradient-to-r from-cyan-500 to-blue-500">Login</button>
-              </div>
-              <p className="text-green-500">{success}</p>
-              <p className="text-red-700">{errorMs}</p>
-            </div>
-          </form>
+            </form>
+          </section>
         </div>
       </div>
     </div>

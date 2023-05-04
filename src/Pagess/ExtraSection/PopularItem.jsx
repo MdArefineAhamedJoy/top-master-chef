@@ -6,7 +6,7 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 import img from "../../assets/banner-5.webp";
-const TopFood = () => {
+const PopularItem = () => {
   const [items, setItems] = useState([]);
   useEffect(() => {
     fetch("https://top-master-chef-world-server-mdarefineahamedjoy.vercel.app/items")
@@ -15,7 +15,7 @@ const TopFood = () => {
   }, []);
 
   return (
-    <div>
+    <div className="pb-20">
       <h2 className="text-center font-bold text-xl md:text-3xl mb-3">
         World Popular Food Items
       </h2>
@@ -67,4 +67,4 @@ const TopFood = () => {
   );
 };
 
-export default TopFood;
+export default PopularItem;
