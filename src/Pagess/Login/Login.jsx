@@ -69,8 +69,8 @@ const Login = () => {
     <>
       <div className="hero min-h-screen bg-gradient-to-tr from-green-400 via-emerald-300 to-emerald-400">
       
-        <div className="hero-content  md:flex justify-center">
-          <div className="  w-6/12">
+        <div className="hero-content flex-col-reverse md:flex-row md:flex  md:justify-center">
+          <div className="w-12/12  md:w-6/12">
             <div className="card-body mx-auto   max-w-sm shadow-2xl ">
               <form onSubmit={handelLogin}>
                 <div className="form-control">
@@ -139,11 +139,11 @@ const Login = () => {
               </div>
             </div>
           </div>
-          <div className="text-center w-6/12 mx-auto  ">
+          <div className="text-center w-12/12 md:w-6/12 md:mx-auto  ">
             <span className="py-6">{error}</span>
             <span className="py-6">{success}</span>
             <Lottie
-              className="md:ps-5"
+              className="md:ps-5 block"
               animationData={loginImg}
             ></Lottie>
           </div>

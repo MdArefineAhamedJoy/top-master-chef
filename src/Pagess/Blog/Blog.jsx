@@ -21,7 +21,7 @@ const Blog = () => {
   }
   return (
     <div className="actual-receipt md:px-5 bg-gradient-to-r from-cyan-500 to-blue-500   py-10">
-      <div className="shadow-2xl md:p-10 rounded-md bg-base-100">
+      <div className="shadow-2xl m-4 md:m-0 p-3  md:p-10 rounded-md bg-base-100">
         <h1 className="text-center text-4xl uppercase font-bold mt-5 mb-10">
           This is a blog section
         </h1>

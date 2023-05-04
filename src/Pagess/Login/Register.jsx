@@ -34,8 +34,8 @@ const Register = () => {
   return (
     <div>
       <div className="hero min-h-screen bg-gradient-to-tr from-green-400 via-emerald-300 to-emerald-400   opacity-80">
-        <div className="hero-content  md:flex">
-          <div className="text-center  w-1/2 ">
+        <div className="hero-content flex-col md:flex-row  md:flex">
+          <div className="text-center w-12/12 md:w-1/2 ">
             <span className="py-5 font-bold">{success}</span>
             <span className="py-5 font-bold">{errorMs}</span>
             <Lottie
@@ -43,7 +43,7 @@ const Register = () => {
               animationData={registerImg}
             ></Lottie>
           </div>
-          <section className="w-6/12 ">
+          <section className="md:w-6/12 w-12/12">
             <form
               onSubmit={handelRegisterFrom}
               className="card flex-shrink-0  max-w-sm shadow-2xl md:mx-auto "
