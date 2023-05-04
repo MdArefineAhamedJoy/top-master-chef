@@ -30,7 +30,7 @@ const Login = () => {
       })
       .catch((error) => {
         setSuccess("");
-        setError("");
+        setError(error.message);
       });
   };
   // handle login with google
