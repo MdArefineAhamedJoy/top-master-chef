@@ -3,22 +3,24 @@ import { NavLink } from "react-router-dom";
 import { AuthContext } from "../../route/AuthProvider";
 import { FaBars, FaWindowClose } from "react-icons/fa";
 const Navbar = () => {
-  const { user ,  logOut} = useContext(AuthContext);
+  const { user, logOut } = useContext(AuthContext);
   const [open, setOpen] = useState(false);
-  console.log(user?.photoURL)
+
   const handelLogOut = () => {
-    console.log('click logout')
+    console.log("click logout");
     logOut()
-    .then(res => {})
-    .catch(error =>{
-      console.log(error.message)
-    })
+      .then((res) => {})
+      .catch((error) => {
+        console.log(error.message);
+      });
   };
+
   const navLinkStyle = ({ isActive }) => {
     return {
       color: isActive ? "red" : "",
     };
   };
+
   return (
     <div>
       <div className="w-full  bg-gray-100  ">
@@ -46,27 +48,56 @@ const Navbar = () => {
                 </NavLink>
               </li>
               <li>
-                <NavLink style={navLinkStyle} className="btn btn-ghost" to="/blog">
+                <NavLink
+                  style={navLinkStyle}
+                  className="btn btn-ghost"
+                  to="/blog"
+                >
                   Blog
                 </NavLink>
               </li>
               <li>
                 {user ? (
-                  <NavLink style={navLinkStyle} className="btn btn-ghost" onClick={handelLogOut}>
+                  <NavLink
+                    style={navLinkStyle}
+                    className="btn btn-ghost"
+                    onClick={handelLogOut}
+                  >
                     LogOut
                   </NavLink>
                 ) : (
-                  <NavLink style={navLinkStyle} className="btn btn-ghost" to="/login">
+                  <NavLink
+                    style={navLinkStyle}
+                    className="btn btn-ghost"
+                    to="/login"
+                  >
                     LogIn
                   </NavLink>
                 )}
               </li>
               <li>
-                {
-                  user ? <img className="w-12 h-12 mx-2 rounded-full" src={user?.photoURL} /> :<NavLink style={navLinkStyle} className="btn btn-ghost " to="/register">
-                  Register
-                </NavLink>
-                }
+                {user ? (
+                  <div className="relative">
+                    <img
+                      className="w-12 h-12 mx-2 rounded-full active:block"
+                      src={user?.photoURL}
+                    />
+                    <div className="absolute top-16 right-4 w-60 p-2  bg-green-500 rounded-lg shadow-lg opacity-0 transition-opacity duration-300">
+                      <p className="text-white font-bold">
+                        {" "}
+                        {user.displayName}
+                      </p>
+                    </div>
+                  </div>
+                ) : (
+                  <NavLink
+                    style={navLinkStyle}
+                    className="btn btn-ghost "
+                    to="/register"
+                  >
+                    Register
+                  </NavLink>
+                )}
               </li>
             </ul>
           </div>
@@ -77,3 +108,4 @@ const Navbar = () => {
 };
 
 export default Navbar;
+
