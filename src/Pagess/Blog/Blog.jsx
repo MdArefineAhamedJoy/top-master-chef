@@ -1,9 +1,27 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
+import html2canvas from 'html2canvas';
+import jsPDF from 'jspdf';
 
 const Blog = () => {
+
+  const [loader, setLoader] = useState(false);
+
+  const downloadPDF = () =>{
+    const capture = document.querySelector('.actual-receipt');
+    setLoader(true);
+    html2canvas(capture).then((canvas)=>{
+      const imgData = canvas.toDataURL('img/png');
+      const doc = new jsPDF('p', 'mm', 'a4');
+      const componentWidth = doc.internal.pageSize.getWidth();
+      const componentHeight = doc.internal.pageSize.getHeight();
+      doc.addImage(imgData, 'PNG', 0, 0, componentWidth, componentHeight);
+      setLoader(false);
+      doc.save('receipt.pdf');
+    })
+  }
   return (
-    <div className="md:px-5 bg-gradient-to-r from-cyan-500 to-blue-500  py-10">
-      <div className="shadow-2xl md:p-10 bg-base-100">
+    <div className="actual-receipt md:px-5 bg-gradient-to-r from-cyan-500 to-blue-500   py-10">
+      <div className="shadow-2xl md:p-10 rounded-md bg-base-100">
         <h1 className="text-center text-4xl uppercase font-bold mt-5 mb-10">
           This is a blog section
         </h1>
@@ -60,6 +78,10 @@ const Blog = () => {
             functional components in React.
           </small>
         </p>
+      <button
+       onClick={downloadPDF}
+       disabled={!(loader ===false)}
+       className="btn">{loader?<span>Downloading</span>:<span>Download</span>}</button>
       </div>
     </div>
   );
