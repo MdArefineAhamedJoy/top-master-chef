@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Marquee from "react-fast-marquee";
+import LazyLoad from "react-lazyload";
 const MovingText = () => {
   const [award, setAward] = useState([]);
   useEffect(() => {
@@ -14,10 +15,12 @@ const MovingText = () => {
         <div className="flex gap-10 shadow-2xl py-5">
           {award.map((data) => (
             <div className="w-32 rounded-lg " key={data.awardId}>
+              <LazyLoad>
               <img
                 className="h-20 p-6 pb-0 rounded-xl mx-auto"
                 src={data.imageUrl}
               ></img>
+              </LazyLoad>
               <p className="font-bold text-center ">{data.awardName}</p>
             </div>
           ))}

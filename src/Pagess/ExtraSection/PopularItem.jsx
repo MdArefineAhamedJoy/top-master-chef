@@ -35,11 +35,13 @@ const PopularItem = () => {
               className="card card-compact md:w-96 bg-base-100 shadow-xl"
             >
               <figure>
+                <LazyLoad>
                 <img
                   className="w-full p-4 h-52"
                   src={item.image_url}
                   alt="food"
                 />
+                </LazyLoad>
               </figure>
               <h2 className="text-center font-bold p-4 pt-0 ">
                 Fd Name : {item.name}
