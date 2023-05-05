@@ -6,6 +6,7 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 import img from "../../assets/banner-5.webp";
+import LazyLoad from "react-lazyload";
 const PopularItem = () => {
   const [items, setItems] = useState([]);
   useEffect(() => {
@@ -40,7 +41,9 @@ const PopularItem = () => {
                   alt="food"
                 />
               </figure>
-              <h2 className="text-center font-bold p-4 pt-0 ">Fd Name : {item.name}</h2>
+              <h2 className="text-center font-bold p-4 pt-0 ">
+                Fd Name : {item.name}
+              </h2>
             </div>
           ))}
         </div>
@@ -54,10 +57,18 @@ const PopularItem = () => {
           >
             {items.map((data) => (
               <SwiperSlide key={data.id}>
-                <img className="w-full h-screen" src={data.image_url} alt="" />
+                <LazyLoad>
+                  <img
+                    className="w-full h-screen"
+                    src={data.image_url}
+                    alt=""
+                  />
+                </LazyLoad>
                 <div className="text-white">
-                <p className="mt-3 font-bold text-lg text-center">{data.name}</p>
-                <p className="pb-10 px-3">{data.description}</p>
+                  <p className="mt-3 font-bold text-lg text-center">
+                    {data.name}
+                  </p>
+                  <p className="pb-10 px-3">{data.description}</p>
                 </div>
               </SwiperSlide>
             ))}

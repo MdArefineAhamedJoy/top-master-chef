@@ -4,7 +4,7 @@ const Banner = () => {
   return (
     <div
       style={{
-        backgroundImage: `url(${bg})`,
+        backgroundImage: `url(${bg}) `,
         backgroundPosition: "center",
         height: "100vh",
         width: "100%",
